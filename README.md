@@ -45,4 +45,4 @@
 
 10.Application of computational fluid dynamics in building performance simulation for the outdoor environment: an overview
 
-本文档介绍了几个常用的城市微气候的UDF，同时简单介绍了城市微气候相关内容，希望这些UDF和介绍内容可以在大家日后的科研中对大家有所帮助，同时强烈邀请大家对本文档内容进行修改及补充！！也欢迎大家上传更多相关的UDF。
+本文档介绍了几个常用的城市微气候的UDF，同时简单介绍了城市微气候相关内容，希望这些UDF和介绍内容可以在大家日后的科研中对大家有所帮助，同时强烈邀请大家对本文档内容进行修改及补充！！也欢迎大家上传更多相关的UDF。作者联系邮箱：shenjialei1992@163.com
