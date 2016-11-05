@@ -22,7 +22,7 @@
 
 城市通风评价指标，包括Purging flow rate，Local mean age of air，Mean residence time，Visitation frequency，Average residence time，Flow rate，Turn-over time，Air change rate，Air exchange efficiency
 
---
+-
 
 可以看到，这里的UDF主要都是针对城市风环境，而对于城市热环境、水体对城市环境的影响等因素都没有被包括进去，由于研究方向及个人能力的限制，目前作者无法对其进行更多的研究并编写相关的UDF，希望能有更多同学对此进行研究并扩展UDF，使之能应用到更多研究情况中。
 
