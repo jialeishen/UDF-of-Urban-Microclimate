@@ -8,7 +8,7 @@
 
 - **udf_of_inlet.c**
 
-入流边界条件，包括速度项、湍动能项、湍流耗散率项。这里速度项以指数分布为例，可以根据具体要求进行修改。
+入流边界条件，包括速度项、湍动能项、湍流耗散率项。这里速度项以指数分布[^一般包括指数分布和对数分布]为例，可以根据具体要求进行修改。
 
 - **udf_of_source_particular_area.c**
 
@@ -42,30 +42,30 @@
 
 本书的大部分内容介绍的是室内环境，大家可以只看其室外环境部分
 
-*注：第一本英文书图书馆没有馆藏，但丁老师工作室有其影印版。其中文翻译版及另外两本中文书籍图书馆均有馆藏*
+*注：第一本英文书[图书馆](http://lib.nju.edu.cn/html/index.html)没有馆藏，但丁老师工作室有其影印版。其中文翻译版及另外两本中文书籍图书馆均有馆藏*
 
 ###综述性论文：
 
 1.[城市形态与城市微气候的关联性研究](http://www.cnki.net/KCMS/detail/detail.aspx?QueryID=3&CurRec=1&recid=&filename=JZXB201207005&dbname=CJFD2012&dbcode=CJFQ&pr=&urlid=&yx=&uid=WEEvREcwSlJHSldRa1FhcEE0L01SOC9Bb2NIa3FuWWNUc3RjVndKTjBhaz0=$9A4hF_YAuvQ5obgVAqNKPCYcEjKensW4ggI8Fm4gTkoUKaID8j8gFw!!&v=MzE3NDc0SDlQTXFJOUZZWVI4ZVgxTHV4WVM3RGgxVDNxVHJXTTFGckNVUkx5ZVp1WnFGeTdrVWJ2TUx6ZlRiTEc=)
 
-2.[AIJ guidelines for practical applications of CFD to pedestrian wind environment around buildings](http://www.aij.or.jp/jpn/publish/cfdguide/JWEIAguide.pdf)
+2.[AIJ guidelines for practical applications of CFD to pedestrian wind environment around buildings](http://www.sciencedirect.com/science/article/pii/S0167610508000445)
 
-3.[Thermal comfort: A review paper](http://www.researchgate.net/profile/Noel_Djongyang/publication/223669260_Thermal_comfort_A_review_paper/links/547639890cf2778985b07cc2.pdf)
+3.[Thermal comfort: A review paper](http://www.sciencedirect.com/science/article/pii/S1364032110002200)
 
-4.[Modelling air qualityin street canyons: a review](http://115.119.97.189/fluidyn/images/PressRelease/street_canyon.pdf)
+4.[Modelling air qualityin street canyons: a review](http://www.sciencedirect.com/science/article/pii/S1352231002008579)
 
-5.[Urban Physics:Effect of the micro-climate on comfort,health and energy demand](http://www.carmeliet.arch.ethz.ch/Publications/Publications?action=download&upname=132.2012_MoonenDefreayeDorerBlockenCarmeliet.pdf)
+5.[Urban Physics:Effect of the micro-climate on comfort,health and energy demand](http://www.sciencedirect.com/science/article/pii/S2095263512000301)
 
-6.[Approaches to study Urban Heat Island-Abilities and limitations](http://www.megujuloenergiapark.hu/docs/mekut/11_1-s2.0-S0360132310001083-main.pdf)
+6.[Approaches to study Urban Heat Island-Abilities and limitations](http://www.sciencedirect.com/science/article/pii/S0360132310001083)
 
-7.[A review on the generation, determination and mitigation of Urban Heat Island](http://www.arch.cuhk.edu.hk/server1/staff1/edward/www/sustain/Student/A%20review%20of%20UHI.pdf)
+7.[A review on the generation, determination and mitigation of Urban Heat Island](http://www.sciencedirect.com/science/article/pii/S1001074208600194)
 
-8.[Cooling the cities – A review of reflective and green roof mitigation technologies to fight heat island and improve comfort in urban environments](http://www.arch.cuhk.edu.hk/server1/staff1/edward/www/sustain/Student/A%20review%20of%20UHI.pdf)
+8.[Cooling the cities – A review of reflective and green roof mitigation technologies to fight heat island and improve comfort in urban environments](http://www.sciencedirect.com/science/article/pii/S0038092X12002447)
 
-9.[Computational Fluid Dynamics for urban physics: Importance, scales, possibilities, limitations and ten tips and tricks towards accurate and reliable simulations](http://urbanphysics.net/2015_BAE_Blocken__Review_CFD_for_UP__Preprint.pdf)
+9.[Computational Fluid Dynamics for urban physics: Importance, scales, possibilities, limitations and ten tips and tricks towards accurate and reliable simulations](http://www.sciencedirect.com/science/article/pii/S0360132315000724)
 
-10.[Application of computational fluid dynamics in building performance simulation for the outdoor environment: an overview](https://www.researchgate.net/profile/Jan_Hensen3/publication/233089413_Application_of_computational_fluid_dynamics_in_building_performance_simulation_for_the_outdoor_environment_An_overview/links/0deec5299bf2206f61000000.pdf?origin=publication_detail&ev=pub_int_prw_xdl&msrp=Z-s9kI_nST0-lcfoxjnHXaWBtzQ29_qmAEcWgT86UcmIsSiBfJl035aP74eJNItAuRUkZ1lF7aVxg6V2kCulXmkptb7baQyvQugvlKamvvw.QaaQ41bFP4fy4LrrqnMs71_rdZdGJQqXx755MRnJ6njzKACuIGynYfnvuuJnpMkLba-ShmPISSVY06xwpbm34w.l-Fipnl2aOjmgJ6oQQngWFlApYd494rk_ehGLfQoiuolOZXVxMlLOT4tgr0b8rNI9RxGhTI8WJmeDWTvgjc7Fg)
+10.[Application of computational fluid dynamics in building performance simulation for the outdoor environment: an overview](http://china.tandfonline.com/doi/abs/10.1080/19401493.2010.513740)
 
- *注：这里只推荐了几篇综述性论文，还有大量相关研究论文，请大家自行查阅*
+ *注：这里只推荐了几篇综述性论文，还有大量相关研究论文，请大家自行[查阅](http://www.sciencedirect.com/)*
 
 本文档介绍了几个常用的城市微气候的UDF，同时简单介绍了城市微气候相关内容，希望这些UDF和介绍内容可以在大家日后的科研中对大家有所帮助，同时强烈邀请大家对本文档内容进行修改及补充！！也欢迎大家上传更多相关的UDF。作者联系邮箱：shenjialei1992@163.com
