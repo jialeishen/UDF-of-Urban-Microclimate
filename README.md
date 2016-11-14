@@ -9,7 +9,7 @@
 ##2. UDF简介
 本文重点讨论的是有关城市微气候的内容，涉及UDF语法、C语言编程等内容不在本文的重点讨论范围内，相关资料可以在网上搜索到很多，这里只对UDF进行简单的介绍，以下内容引用自[流沙CAE的博客](http://blog.sina.com.cn/s/blog_599d8faa0102v3j7.html)：
 >1、什么是UDF
->UDF（User Defined Function，用户自定义函数），可以用于被ANSYS FLUENT求解器动态加载以增强其标准功能的C语言程序。UDF归根结底是一段C语言代码，但是需要在FLUENT规定的框架范围内去定义，这样才能够被FLUENT认可并在其加载后以提供标准程序所不具备的功能。
+UDF（User Defined Function，用户自定义函数），可以用于被ANSYS FLUENT求解器动态加载以增强其标准功能的C语言程序。UDF归根结底是一段C语言代码，但是需要在FLUENT规定的框架范围内去定义，这样才能够被FLUENT认可并在其加载后以提供标准程序所不具备的功能。
 >
 >2、干嘛要用UDF
 >在FLUENT中，可以利用UDF来延伸fluent自身的功能。比如说以下一些典型的应用：
