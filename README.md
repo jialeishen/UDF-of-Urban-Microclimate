@@ -73,23 +73,29 @@
 
 ##4. 城市微气候相关UDF
 ###4.1 城市风环境
-城市风环境对于整个城市环境有巨大影响，涉及城市空气污染、自然通风、对流热交换、风荷载及城市风害等内容，同时城市风环境作为室内环境的边界条件也对室内环境有着重要影响。不同的城市密度、城市建筑高度变化、城市及街道形态等的变化都会影响一定尺度下的城市风环境。除了这一系列的城市、街道、建筑的形态会对城市风环境产生重要影响之外，城市区域的来流风（approaching flow）、植被等也会影响城市内部的风环境。
+城市风环境对于整个城市环境有巨大影响，涉及城市空气污染、自然通风、对流热交换、风荷载及城市风害等内容，同时城市风环境作为室内环境的边界条件也对室内环境有着重要影响。不同的城市密度、城市建筑高度变化、城市及街道形态等的变化都会影响一定尺度下的城市风环境。除了这一系列的城市、街道、建筑的形态会对城市风环境产生重要影响之外，城市区域的入口边界条件（inlet flow）、植被等也会影响城市内部的风环境。
 
-- **udf_of_inlet.c**
+- **入口边界条件**
+
+-- 相关UDF：**udf_of_inlet.c**
 
 入流边界条件，包括速度项、湍动能项、湍流耗散率项。这里速度项以指数分布为例，可以根据具体要求进行修改。
 
 ![inletflow](https://github.com/kidisgod/UDF-of-Urban-Microclimate/blob/master/inletflow.png)
 
-- **udf_of_tree.c**
+- **植被对风场的影响**
+
+-- 相关UDF：**udf_of_tree.c**
 
 植被对流场的影响，包括速度源项、湍动能源项、湍流耗散率源项。
 
-- **udf_of_source_particular_area.c**
+- **通风评价指标**
+
+-- 相关UDF：**udf_of_source_particular_area.c**
 
 污染物源项，在特定区域内设定污染物源项。
 
-- **udf_of_urban_ventilation_indices.c**
+-- **udf_of_urban_ventilation_indices.c**
 
 城市通风评价指标，包括Purging flow rate，Local mean age of air，Mean residence time，Visitation frequency，Average residence time，Flow rate，Turn-over time，Air change rate，Air exchange efficiency
 
