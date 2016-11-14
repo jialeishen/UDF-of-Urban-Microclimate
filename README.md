@@ -1,6 +1,5 @@
 # 城市微气候
 [TOC]
--
 ##1. 绪论
 
 本文档包含了一些在使用商业CFD软件ANSYS Fluent®模拟城市微气候（Urban Microclimate）时，常用到的用户自定义函数（UDF, i.e. User Defined Function）。
