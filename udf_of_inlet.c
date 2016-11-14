@@ -3,7 +3,7 @@
 @author:Jialei Shen
 @e-mail:shenjialei1992@163.com
 @latest:2016.09.17
-This is a UDF file for setting the inlet boundary conditions in Fluent, 
+This is a UDF file to setup the inlet boundary conditions in Fluent, 
 including the following terms:
 1  profile term of inlet velocity
 2  profile term of inlet k
