@@ -1,4 +1,4 @@
-![urbanlogo](https://github.com/kidisgod/UDF-of-Urban-Microclimate/blob/master/urbanlogo.png)
+![urbantexture](https://github.com/kidisgod/UDF-of-Urban-Microclimate/blob/master/urbantexture.png)
 # 城市微气候
 
 ##1. 绪论
