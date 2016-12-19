@@ -38,19 +38,19 @@ DEFINE_SOURCE(x_momentum_source,c,t,dS,eqn)
 	C_CENTROID(x,c,t);
 
 	if(x[1]<Zm && x[1]>=0)
-    {
+	{
 		n=6;
 		lad=Lm*pow(((H-Zm)/(H-x[1])),n)*exp(n*(1-((H-Zm)/(H-x[1]))));
-    }
-    else if(x[1]>=Zm && x[1]<H)
-    {
+	}
+	else if(x[1]>=Zm && x[1]<H)
+	{
 		n=0.5;
 		lad=Lm*pow(((H-Zm)/(H-x[1])),n)*exp(n*(1-((H-Zm)/(H-x[1]))));
-    }
-    else
-    {
+	}
+	else
+	{
 		lad=0;
-    }
+	}
 
 	source=-Cdf*lad*W(C_U(c,t),C_V(c,t),C_W(c,t))*C_U(c,t);
 	dS[eqn]=-Cdf*lad*W(C_U(c,t),C_V(c,t),C_W(c,t));
@@ -66,19 +66,19 @@ DEFINE_SOURCE(y_momentum_source,c,t,dS,eqn)
 	C_CENTROID(x,c,t);
 
 	if(x[1]<Zm && x[1]>=0)
-    {
+	{
 		n=6;
 		lad=Lm*pow(((H-Zm)/(H-x[1])),n)*exp(n*(1-((H-Zm)/(H-x[1]))));
-    }
-    else if(x[1]>=Zm && x[1]<H)
-    {
+	}
+	else if(x[1]>=Zm && x[1]<H)
+	{
 		n=0.5;
 		lad=Lm*pow(((H-Zm)/(H-x[1])),n)*exp(n*(1-((H-Zm)/(H-x[1]))));
-    }
-    else
-    {
+	}
+	else
+	{
 		lad=0;
-    }
+	}
 
 	source=-Cdf*lad*W(C_U(c,t),C_V(c,t),C_W(c,t))*C_V(c,t);
 	dS[eqn]=-Cdf*lad*W(C_U(c,t),C_V(c,t),C_W(c,t));
@@ -94,19 +94,19 @@ DEFINE_SOURCE(z_momentum_source,c,t,dS,eqn)
 	C_CENTROID(x,c,t);
 
 	if(x[1]<Zm && x[1]>=0)
-    {
+	{
 		n=6;
 		lad=Lm*pow(((H-Zm)/(H-x[1])),n)*exp(n*(1-((H-Zm)/(H-x[1]))));
-    }
-    else if(x[1]>=Zm && x[1]<H)
-    {
+	}
+	else if(x[1]>=Zm && x[1]<H)
+	{
 		n=0.5;
 		lad=Lm*pow(((H-Zm)/(H-x[1])),n)*exp(n*(1-((H-Zm)/(H-x[1]))));
-    }
-    else
-    {
+	}
+	else
+	{
 		lad=0;
-    }
+	}
 
 	source=-Cdf*lad*W(C_U(c,t),C_V(c,t),C_W(c,t))*C_W(c,t);
 	dS[eqn]=-Cdf*lad*W(C_U(c,t),C_V(c,t),C_W(c,t));
@@ -122,19 +122,19 @@ DEFINE_SOURCE(k_source,c,t,dS,eqn)
 	C_CENTROID(x,c,t);
 
 	if(x[1]<Zm && x[1]>=0)
-    {
+	{
 		n=6;
 		lad=Lm*pow(((H-Zm)/(H-x[1])),n)*exp(n*(1-((H-Zm)/(H-x[1]))));
-    }
-    else if(x[1]>=Zm && x[1]<H)
-    {
+	}
+	else if(x[1]>=Zm && x[1]<H)
+	{
 		n=0.5;
 		lad=Lm*pow(((H-Zm)/(H-x[1])),n)*exp(n*(1-((H-Zm)/(H-x[1]))));
-    }
-    else
-    {
+	}
+	else
+	{
 		lad=0;
-    }
+	}
 
 	source=Cdf*lad*pow(W(C_U(c,t),C_V(c,t),C_W(c,t)),3)-4*Cdf*lad*W(C_U(c,t),C_V(c,t),C_W(c,t))*C_K(c,t);
 	dS[eqn]=-4*Cdf*lad*W(C_U(c,t),C_V(c,t),C_W(c,t));
@@ -150,19 +150,19 @@ DEFINE_SOURCE(e_source,c,t,dS,eqn)
 	C_CENTROID(x,c,t);
 
 	if(x[1]<Zm && x[1]>=0)
-    {
+	{
 		n=6;
 		lad=Lm*pow(((H-Zm)/(H-x[1])),n)*exp(n*(1-((H-Zm)/(H-x[1]))));
-    }
-    else if(x[1]>=Zm && x[1]<H)
-    {
+	}
+	else if(x[1]>=Zm && x[1]<H)
+	{
 		n=0.5;
 		lad=Lm*pow(((H-Zm)/(H-x[1])),n)*exp(n*(1-((H-Zm)/(H-x[1]))));
-    }
-    else
-    {
+	}
+	else
+	{
 		lad=0;
-    }
+	}
 
 	source=1.5*Cdf*lad*pow(W(C_U(c,t),C_V(c,t),C_W(c,t)),3)-6*Cdf*lad*W(C_U(c,t),C_V(c,t),C_W(c,t))*C_D(c,t);
 	dS[eqn]=-6*Cdf*lad*W(C_U(c,t),C_V(c,t),C_W(c,t));
@@ -179,20 +179,20 @@ DEFINE_PROFILE(velocity_profile,t,i)
 	face_t f;
 
 	begin_f_loop(f,t)
-    {
+	{
 		F_CENTROID(x,f,t);
 		h=x[1];
       
 		if(h<=del)
-        {
+        	{
 			F_PROFILE(f,t,i)=ufree*pow(h/del,B);
-        }
-        else
-        {
+        	}
+        	else
+        	{
 			F_PROFILE(f,t,i)=ufree;
-        }
+        	}
 
-    }
+	}
 	end_f_loop(f,t)
 }
 
@@ -210,20 +210,20 @@ DEFINE_PROFILE(k_profile,t,i)
 	utau=sqrt(ff*ufree*ufree*0.5);
 
 	begin_f_loop(f,t)
-    {
+	{
 		F_CENTROID(x,f,t);
 		h=x[1];
       
 		if(h<=WW)
-        {
+        	{
 			F_PROFILE(f,t,i)=(pow(utau,2)*pow((1-h/WW),2))/(sqrt(Cmu));
-        }
-        else
-        {
+        	}
+        	else
+        	{
 			F_PROFILE(f,t,i)=0;
-        }
+        	}
 
-    }
+	}
 	end_f_loop(f,t)
 }
 
@@ -241,19 +241,19 @@ DEFINE_PROFILE(e_profile,t,i)
 	utau=sqrt(ff*ufree*ufree*0.5);
 
 	begin_f_loop(f,t)
-    {
+	{
 		F_CENTROID(x,f,t);
 		h=x[1];
       
 		if(h<=WW)
-        {
+        	{
 			F_PROFILE(f,t,i)=((pow(utau,3)*pow((1-h/WW),2))/(KAR*(h+Z0)))*(1+5.75*(h/Z0));
-        }
-        else
-        {
+        	}
+        	else
+        	{
 			F_PROFILE(f,t,i)=0;
-        }
+        	}
 
-    }
+	}
 	end_f_loop(f,t)
 }
