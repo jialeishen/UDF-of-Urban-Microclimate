@@ -29,20 +29,20 @@ DEFINE_PROFILE(velocity_profile,t,i)
 	face_t f;
 
 	begin_f_loop(f,t)
-    {
+	{
 		F_CENTROID(x,f,t);
 		h=x[1];
       
 		if(h<=DELTA && h>=0)
-        {
+        	{
 			F_PROFILE(f,t,i)=UH*pow(h/DELTA,A);
-        }
-        else
-        {
+        	}
+        	else
+        	{
 			F_PROFILE(f,t,i)=UH;
-        }
+        	}
 
-    }
+	}
 	end_f_loop(f,t)
 }
 
@@ -55,20 +55,20 @@ DEFINE_PROFILE(k_profile,t,i)
 	face_t f;
   
 	begin_f_loop(f,t)
-    {
+	{
 		F_CENTROID(x,f,t);
 		h=x[1];
       
 		if(h<=DELTA)
 		{
 			F_PROFILE(f,t,i)=((Utau*Utau)/sqrt(Cmu))*(1-h/DELTA);
-        }
-        else
-        {
+        	}
+        	else
+        	{
 			F_PROFILE(f,t,i)=0;
-        }
+        	}
 
-    }
+	}
 	end_f_loop(f,t)
 }
 
@@ -81,19 +81,19 @@ DEFINE_PROFILE(e_profile,t,i)
 	face_t f;
   
 	begin_f_loop(f,t)
-    {
+	{
 		F_CENTROID(x,f,t);
 		h=x[1];
       
 		if(h<=DELTA)
-        {
+        	{
 			F_PROFILE(f,t,i)=((Utau*Utau*Utau)/(K*h))*(1-h/DELTA);
-        }
-        else
-        {
+        	}
+        	else
+        	{
 			F_PROFILE(f,t,i)=0;
-        }
+        	}
 
-    }
+	}
 	end_f_loop(f,t)
 }
