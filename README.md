@@ -1,5 +1,7 @@
 ![urbanlogo](https://github.com/kidisgod/UDF-of-Urban-Microclimate/blob/master/urbanlogo.png)
-# 城市微气候
+# Urban Microclimate 城市微气候
+## 0. Introduction
+This repo contains some commonly used UDF files in urban microclimate when running ANSYS Fluent simulations. It includes the UDF files of wind velocity profile (inlet profile), pollutant emission source, tree and greening, and some commonly used performance indices for evaluating the urban ventilation. The following is the original README file I created in Chinese, including some basic introdcutions on urban microclimate and the UDF files in this repo. I'll add the English version if I have time, hopefully. 
 
 ## 1. 绪论
 在使用商业CFD软件ANSYS Fluent®研究城市微气候（Urban Microclimate）时，常常需要根据城市微气候的各特点编写用户自定义函数（UDF, i.e. User Defined Function）来模拟真实的城市环境，本文档包含了其中一些常用的UDF。本文首先对UDF及城市微气候的基本概念各自进行了简单的介绍；并结合城市微气候中的概念对本文档中的UDF进行了简单介绍，目前本文档中的UDF主要针对城市风环境；最后推荐了一些城市微气候相关的书籍及论文文献。希望本文档中所讨论的内容能对各位读者今后的科研有所帮助。
@@ -150,6 +152,6 @@ Loading...
 
  *注：这里只推荐了几篇综述性论文，还有大量相关研究论文，请读者自行[查阅](http://www.sciencedirect.com/)*
 
-本文档介绍了几个常用的城市微气候的UDF，同时简单介绍了城市微气候相关内容，希望这些UDF和介绍内容可以对各位读者日后的科研有所帮助或启发，同时**强烈邀请**大家对本文档内容进行修改及补充！！也欢迎读者分享更多城市微气候相关的UDF，欢迎共同交流。本文档作者个人网站：www.jialeishen.com 联系邮箱：jshen20@syr.edu
+本文档介绍了几个常用的城市微气候的UDF，同时简单介绍了城市微气候相关内容，希望这些UDF和介绍内容可以对各位读者日后的科研有所帮助或启发，同时**强烈邀请**大家对本文档内容进行修改及补充！！也欢迎读者分享更多城市微气候相关的UDF，欢迎共同交流。作者：www.jialeishen.com 
 
 更新：2018/07/30
