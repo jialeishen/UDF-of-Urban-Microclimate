@@ -110,7 +110,7 @@ This repo contains some commonly used UDF files in urban microclimate when runni
 ### 4.2 城市污染与大气环境
 一些大气污染物相关的UDF或相关计算在笔者其他repo中有涉及到一些（原用于室内环境，亦可推广至城市环境），例如：
 
-- **[臭氧反应与沉降](https://github.com/jialeishen/UDF-of-Indoor-Ozone-Deposition)**
+- [**臭氧反应与沉降**](https://github.com/jialeishen/UDF-of-Indoor-Ozone-Deposition)
 
 |相关UDF|
 |---|
@@ -119,7 +119,7 @@ This repo contains some commonly used UDF files in urban microclimate when runni
 
 臭氧在材料表面的沉降及化学反应生成副产物（by-products）的过程，包含臭氧与化合物的源项/汇项。
 
-- **[其他VOCs反应与沉降](https://github.com/jialeishen/UDF-Formaldehyde-Adsorption)*(以甲醛为例)* **
+- [**其他VOCs反应与沉降**](https://github.com/jialeishen/UDF-Formaldehyde-Adsorption)*(以甲醛为例)*
 
 |相关UDF|
 |---|
@@ -127,15 +127,14 @@ This repo contains some commonly used UDF files in urban microclimate when runni
 
 甲醛与其他化合物反应生成其他副产物的过程，包含甲醛与化合物的源项/汇项。
 
-- **[颗粒物沉降](https://github.com/jialeishen/ParticleDeposition)*(理论计算，非UDF)* **
+- [**颗粒物沉降**](https://github.com/jialeishen/ParticleDeposition)*(理论计算，非UDF)*
 
 |相关计算|
 |---|
 |[**particledeposition.m**](https://github.com/jialeishen/ParticleDeposition/blob/master/particledeposition.m)|
 |[**vd_empirical.m**](https://github.com/jialeishen/ParticleDeposition/blob/master/vd_empirical.m)|
-*(理论计算，非UDF)* 
 
-颗粒物在表面的沉降，该理论公式可被用于UDF中来计算颗粒物的沉降。
+颗粒物在表面的沉降的理论计算（非UDF），但该理论公式可被用于UDF中来计算颗粒物的沉降。
 
 ## 5. 相关UDF解释与教程
 UDF相关的代码与各类宏的介绍，可以参见ANSYS Fluent官方的UDF教程，你可以在你的Fluent的Help中找到相关文档。网络上亦有一些相关的教程，请自行搜索。本repo中涉及到的一些UDF代码均带有一些注释，可以配合注释来理解这些UDF代码。此外，也以部分UDF文件为例，写了比较详尽的解释文档，参见本repo的几个Tutorial文档，应该会对你的理解有所帮助。这些文档写于多年前，如有任何错误请大家指出。
