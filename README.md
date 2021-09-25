@@ -175,7 +175,7 @@ UDF相关的代码与各类宏的介绍，可以参见ANSYS Fluent官方的UDF�
  
 最后是一些笔者author或co-author的城市微气候相关的论文，涉及**城市风环境**，**街道通风与污染物扩散**，**植被与绿化对城市热环境与污染物扩散的影响**，**交通环境的人体污染物暴露**等。欢迎各位同行阅读与引用，谢谢！若您无法获取这些论文，也可在笔者主页上（www.jialeishen.com ）找到全文下载。
 
- (1) [An investigation on the effect of street morphology to ambient air quality using six real-world cases](https://doi.org/10.1016/j.atmosenv.2017.05.047）
+ (1) [An investigation on the effect of street morphology to ambient air quality using six real-world cases](https://doi.org/10.1016/j.atmosenv.2017.05.047)
 
  (2) [The Impact of Green Space Layouts on Microclimate and Air Quality in Residential Districts of Nanjing, China](https://doi.org/10.3390/f9040224)
  
