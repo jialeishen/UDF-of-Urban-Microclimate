@@ -145,29 +145,29 @@ UDF相关的代码与各类宏的介绍，可以参见ANSYS Fluent官方的UDF�
   
 ### 6.1 参考书：
 
-（1）[城市环境物理](https://www.amazon.cn/%E5%9F%8E%E5%B8%82%E7%8E%AF%E5%A2%83%E7%89%A9%E7%90%86-%E5%88%98%E5%8A%A0%E5%B9%B3/dp/B004X8RC6A/ref=sr_1_1?ie=UTF8&qid=1478336099&sr=8-1&keywords=%E5%9F%8E%E5%B8%82%E7%8E%AF%E5%A2%83%E7%89%A9%E7%90%86)
+ (1) [城市环境物理](https://www.amazon.cn/%E5%9F%8E%E5%B8%82%E7%8E%AF%E5%A2%83%E7%89%A9%E7%90%86-%E5%88%98%E5%8A%A0%E5%B9%B3/dp/B004X8RC6A/ref=sr_1_1?ie=UTF8&qid=1478336099&sr=8-1&keywords=%E5%9F%8E%E5%B8%82%E7%8E%AF%E5%A2%83%E7%89%A9%E7%90%86)
 
 强烈推荐，本文档有大量内容直接摘自《城市环境物理》的各个章节或受其启发。
 
-（2）[CFD与建筑环境设计](https://www.amazon.cn/CFD%E4%B8%8E%E5%BB%BA%E7%AD%91%E7%8E%AF%E5%A2%83%E8%AE%BE%E8%AE%A1-%E6%9D%91%E4%B8%8A%E5%91%A8%E4%B8%89/dp/B0012782NW/ref=sr_1_1?ie=UTF8&qid=1478336169&sr=8-1&keywords=CFD%E4%B8%8E%E5%BB%BA%E7%AD%91%E7%8E%AF%E5%A2%83%E8%AE%BE%E8%AE%A1)
+ (2) [CFD与建筑环境设计](https://www.amazon.cn/CFD%E4%B8%8E%E5%BB%BA%E7%AD%91%E7%8E%AF%E5%A2%83%E8%AE%BE%E8%AE%A1-%E6%9D%91%E4%B8%8A%E5%91%A8%E4%B8%89/dp/B0012782NW/ref=sr_1_1?ie=UTF8&qid=1478336169&sr=8-1&keywords=CFD%E4%B8%8E%E5%BB%BA%E7%AD%91%E7%8E%AF%E5%A2%83%E8%AE%BE%E8%AE%A1)
 
 此书的大部分内容介绍的是室内环境，大家可以只看其室外环境部分
 
-（3）[Urban Microclimate: Designing the Spaces Between Buildings](https://www.amazon.cn/Urban-Microclimate-Designing-the-Spaces-Between-Buildings-Erell-Evyatar/dp/B008FYSNL6/ref=sr_1_1?ie=UTF8&qid=1478336175&sr=8-1&keywords=Urban+Microclimate%3A+Designing+the+Spaces+Between+Buildings)
+ (3) [Urban Microclimate: Designing the Spaces Between Buildings](https://www.amazon.cn/Urban-Microclimate-Designing-the-Spaces-Between-Buildings-Erell-Evyatar/dp/B008FYSNL6/ref=sr_1_1?ie=UTF8&qid=1478336175&sr=8-1&keywords=Urban+Microclimate%3A+Designing+the+Spaces+Between+Buildings)
 
 本书有[中文翻译版](https://www.amazon.cn/%E5%9F%8E%E5%B8%82%E5%B0%8F%E6%B0%94%E5%80%99-%E5%BB%BA%E7%AD%91%E4%B9%8B%E9%97%B4%E7%9A%84%E7%A9%BA%E9%97%B4%E8%AE%BE%E8%AE%A1-%E5%9F%83%E7%BB%B4%E7%89%B9%C2%B7%E5%9F%83%E9%9B%B7%E5%B0%94/dp/B00JL2FMZQ/ref=sr_1_3?ie=UTF8&qid=1478336175&sr=8-3&keywords=Urban+Microclimate%3A+Designing+the+Spaces+Between+Buildings)，但是翻译质量略差，建议大家配合英文原版阅读。
 
 ### 6.2 综述性论文：
 
-（1）[城市形态与城市微气候的关联性研究](http://www.cnki.net/KCMS/detail/detail.aspx?QueryID=3&CurRec=1&recid=&filename=JZXB201207005&dbname=CJFD2012&dbcode=CJFQ&pr=&urlid=&yx=&uid=WEEvREcwSlJHSldRa1FhcEE0L01SOC9Bb2NIa3FuWWNUc3RjVndKTjBhaz0=$9A4hF_YAuvQ5obgVAqNKPCYcEjKensW4ggI8Fm4gTkoUKaID8j8gFw!!&v=MzE3NDc0SDlQTXFJOUZZWVI4ZVgxTHV4WVM3RGgxVDNxVHJXTTFGckNVUkx5ZVp1WnFGeTdrVWJ2TUx6ZlRiTEc=)
+ (1) [城市形态与城市微气候的关联性研究](http://www.cnki.net/KCMS/detail/detail.aspx?QueryID=3&CurRec=1&recid=&filename=JZXB201207005&dbname=CJFD2012&dbcode=CJFQ&pr=&urlid=&yx=&uid=WEEvREcwSlJHSldRa1FhcEE0L01SOC9Bb2NIa3FuWWNUc3RjVndKTjBhaz0=$9A4hF_YAuvQ5obgVAqNKPCYcEjKensW4ggI8Fm4gTkoUKaID8j8gFw!!&v=MzE3NDc0SDlQTXFJOUZZWVI4ZVgxTHV4WVM3RGgxVDNxVHJXTTFGckNVUkx5ZVp1WnFGeTdrVWJ2TUx6ZlRiTEc=)
 
-（2）[AIJ guidelines for practical applications of CFD to pedestrian wind environment around buildings](http://www.sciencedirect.com/science/article/pii/S0167610508000445)
+ (2) [AIJ guidelines for practical applications of CFD to pedestrian wind environment around buildings](http://www.sciencedirect.com/science/article/pii/S0167610508000445)
 
-（3）[Indices employed for the assessment of “urban outdoor ventilation” - A review](http://dx.doi.org/10.1016/j.atmosenv.2019.117211)
+ (3) [Indices employed for the assessment of “urban outdoor ventilation” - A review](http://dx.doi.org/10.1016/j.atmosenv.2019.117211)
 
-（4）[Modelling air qualityin street canyons: a review](http://www.sciencedirect.com/science/article/pii/S1352231002008579)
+ (4) [Modelling air qualityin street canyons: a review](http://www.sciencedirect.com/science/article/pii/S1352231002008579)
 
-（5）[Application of computational fluid dynamics in building performance simulation for the outdoor environment: an overview](http://china.tandfonline.com/doi/abs/10.1080/19401493.2010.513740)
+ (5) [Application of computational fluid dynamics in building performance simulation for the outdoor environment: an overview](http://china.tandfonline.com/doi/abs/10.1080/19401493.2010.513740)
 
  *注：这里只推荐了几篇综述性论文，还有大量相关研究论文，请各位自行[查阅](http://www.sciencedirect.com/)*
  
@@ -175,7 +175,7 @@ UDF相关的代码与各类宏的介绍，可以参见ANSYS Fluent官方的UDF�
  
 最后是一些笔者author或co-author的城市微气候相关的论文，涉及**城市风环境**，**街道通风与污染物扩散**，**植被与绿化对城市热环境与污染物扩散的影响**，**交通环境的人体污染物暴露**等。欢迎各位同行阅读与引用，谢谢！若您无法获取这些论文，也可在笔者主页上（www.jialeishen.com ）找到全文下载。
 
-（1）[An investigation on the effect of street morphology to ambient air quality using six real-world cases](https://doi.org/10.1016/j.atmosenv.2017.05.047)
+ (1) [An investigation on the effect of street morphology to ambient air quality using six real-world cases](https://doi.org/10.1016/j.atmosenv.2017.05.047）
 
  (2) [The Impact of Green Space Layouts on Microclimate and Air Quality in Residential Districts of Nanjing, China](https://doi.org/10.3390/f9040224)
  
