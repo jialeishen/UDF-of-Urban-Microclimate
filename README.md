@@ -1,12 +1,15 @@
-![urbanlogo](https://github.com/kidisgod/UDF-of-Urban-Microclimate/blob/master/urbanlogo.png)
+![urban](https://github.com/kidisgod/UDF-of-Urban-Microclimate/blob/master/urban.png)
 # Urban Microclimate 城市微气候
-## 0. Introduction
-This repo contains some commonly used UDF files in urban microclimate when running ANSYS Fluent simulations. It includes the UDF files of wind velocity profile (inlet profile), pollutant emission source, tree and greening, and some commonly used performance indices for evaluating the urban ventilation. The following is the original README file I created in Chinese, including some basic introdcutions on urban microclimate and the UDF files in this repo. I'll add the English version if I have time, hopefully. 
 
-## 1. 绪论
-在使用商业CFD软件ANSYS Fluent®研究城市微气候（Urban Microclimate）时，常常需要根据城市微气候的各特点编写用户自定义函数（UDF, i.e. User Defined Function）来模拟真实的城市环境，本文档包含了其中一些常用的UDF。本文首先对UDF及城市微气候的基本概念各自进行了简单的介绍；并结合城市微气候中的概念对本文档中的UDF进行了简单介绍，目前本文档中的UDF主要针对城市风环境；最后推荐了一些城市微气候相关的书籍及论文文献。希望本文档中所讨论的内容能对各位同行今后的科研有所帮助。
+## Table of Content 目录
+[TOC]
 
-## 2. UDF简介
+## 1. Introduction 绪论
+When using ANSYS Fluent® for urban microclimate simulation, it commonly requires users to apply some user defined functions (UDFs) to simulate the realistic urban environment and further solve specific urban microclimate problems, such as pollutant transmission, in ANSYS Fluent. This repo contains some commonly used UDF files of ANSYS Fluent for urban microclimate simulations. It includes the UDF files of wind velocity profile (inlet profile), pollutant emission source, tree and greening, and some commonly used performance indices for evaluating the urban ventilation. Some relevant publications are presented at the end of this document.
+在使用商用CFD软件ANSYS Fluent®研究城市微气候（Urban Microclimate）时，常常需要根据城市微气候的各特点编写用户自定义函数（UDF, i.e. User Defined Function）来模拟真实的城市环境，本文档包含了其中一些常用的UDF。本文首先对UDF及城市微气候的基本概念各自进行了简单的介绍；并结合城市微气候中的概念对本文档中的UDF进行了简单介绍，目前本文档中的UDF主要针对城市风环境；最后推荐了一些城市微气候相关的书籍及论文文献。希望本文档中所讨论的内容能对各位同行今后的科研有所帮助。
+
+## 2. Introduction of UDF UDF简介
+There have been a bunch of documents talking about UDFs online. This document only focuses on UDFs related to urban microclimate. The background knowledge regarding UDF syntax and C programming is not discussed in this document. You can find numerous information online (for example [the ANSYS Fluent Help file for UDFs](https://www.afs.enea.it/project/neptunius/docs/fluent/html/udf/node4.htm#:~:text=A%20user%2Ddefined%20function%2C%20or,standard%20features%20of%20the%20code.)). UDFs are written in C. Therefore, users need to have some background in C programming or at least programming, no matter what language it is. The C codes of UDFs need to satisfy both C syntax and UDF "rules" (using predefined functions and macros in Fluent, check the Help file for more). UDFs in Fluent can be used to define specific properties for different variables, including boundary profiles (e.g. with varying velocity, temperature, concentration , etc.), material properties, chemical reaction constant, species source/sink term, and user defined scalars (UDSs), etc. 
 本文档重点讨论的是有关城市微气候的内容，涉及UDF语法、C语言编程等内容不在本文的重点讨论范围内，相关资料可以在网上搜索到很多，这里只对UDF进行简单的介绍，以下内容引用自[流沙CAE的博客](http://blog.sina.com.cn/s/blog_599d8faa0102v3j7.html)：
 >1、什么是UDF
 >
@@ -64,9 +67,10 @@ This repo contains some commonly used UDF files in urban microclimate when runni
 >
 >熟悉FLUENT的内部运行规则，对于用好UDF是非常重要的。
 
-通过上文的介绍，大家应该对UDF已经有了一个大概的印象，知道了UDF是什么、有什么用等等，这有助于大家进一步理解并学习UDF，更多的有关UDF具体编写及语法等内容，大家可以查阅Fluent的Help文档（即上文提到的手册）。
+通过上文的介绍，大家应该对UDF已经有了一个大概的印象，知道了UDF是什么、有什么用等等，这有助于大家进一步理解并学习UDF，更多的有关UDF具体编写及语法等内容，大家可以查阅Fluent的[Help文档](https://www.afs.enea.it/project/neptunius/docs/fluent/html/udf/node4.htm#:~:text=A%20user%2Ddefined%20function%2C%20or,standard%20features%20of%20the%20code.)。
 
-## 3. 城市微气候简介
+## 3. Introduction of Urban Microclimate 城市微气候简介
+Microclimate presents the local climate under a specific circumstance, which may have some different features from the surrounding environments. In a city scale, the local atmospheric environment usually exhibits quite different conditions at various locations, depending on local terrain, vegetation and greening, river and water, urban surface material, urban layout, building geometry and etc. It is usually called urban microclimate or urban microenvironment. Urban microclimate
 微气候是指在特定环境下不同于周围环境的当地小气候。而在城市尺度内，大气环境由于受到地形、植被绿化、水体、城市下垫面特征、城市布局形式、建筑物特征等因素的影响，常常表现出不同于周围大气环境的气候特点，这种现象也常被称为城市微气候。城市微气候常与城市环境中行人的健康、舒适性等直接相关，并间接影响室内环境。常见的如城市热岛现象（UHI, i.e. Urban Heat Island）、城市大气污染、建筑屋顶绿化、通风廊道等概念都属于城市微气候的研究范畴，涉及建筑、大气、环境、城市设计、城市规划等相关学科与领域。
 
 城市微气候主要包括：**城市热环境、城市湿环境、城市风环境、城市污染与大气环境、城市光环境、城市声环境**等。由于笔者的研究方向及个人水平的限制，目前本文档所涉及到的城市微气候内容只局限在对**城市风环境**与**城市污染与大气环境**的讨论。对于**城市热环境**、**城市湿环境**等其他方向，笔者目前及在可预见的未来都无法对其进行更多的研究并编写相关的UDF，希望能有同行对此进行研究并扩展相应的UDF，使之能应用到更为广泛的研究中。因此，本repo将仅针对于**城市风环境**与**城市污染与大气环境**进行讨论。
@@ -74,7 +78,7 @@ This repo contains some commonly used UDF files in urban microclimate when runni
 下图摘自荷兰埃因霍温理工大学（TU/e）Bert Blocken教授的[一篇文章](http://www.sciencedirect.com/science/article/pii/S0360132315000724)，描述了城市物理环境所涉及到的内容。
 ![urbanphysics](https://github.com/kidisgod/UDF-of-Urban-Microclimate/blob/master/urbanphysics.png)
 
-## 4. 城市微气候相关UDF
+## 4. UDFs in Urban Microclimate 城市微气候相关UDF
 ### 4.1 城市风环境
 城市风环境对于整个城市环境有巨大影响，涉及城市空气污染、自然通风、对流热交换、风荷载及城市风害等内容，同时城市风环境作为室内环境的边界条件也对室内环境有着重要影响。不同的城市密度、城市建筑高度变化、城市及街道形态等的变化都会影响一定尺度下的城市风环境。除了这一系列的城市、街道、建筑的形态会对城市风环境产生重要影响之外，城市区域的入口边界条件（inlet flow）、植被等也会影响城市内部的风环境。
 
