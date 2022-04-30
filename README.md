@@ -97,9 +97,7 @@ Urban Wind Environment is essential for the general environment in the city. It 
 
 城市风环境对于整个城市环境有巨大影响，涉及城市空气污染、自然通风、对流热交换、风荷载及城市风害等内容，同时城市风环境作为室内环境的边界条件也对室内环境有着重要影响。不同的城市密度、城市建筑高度变化、城市及街道形态等的变化都会影响一定尺度下的城市风环境。除了这一系列的城市、街道、建筑的形态会对城市风环境产生重要影响之外，城市区域的入口边界条件（inlet flow）、植被等也会影响城市内部的风环境。
 
---------
-
-- **Inlet Profile 入口边界条件**
+#### a. **Inlet Profile 入口边界条件**
 
 |Relevant UDFs 相关UDF|
 |---|
@@ -111,9 +109,7 @@ It sets up the inlet flow profiles, including inlet velocity and turbulence. The
 
 ![inletflow](https://github.com/kidisgod/UDF-of-Urban-Microclimate/blob/master/inletflow.png)
 
---------
-
-- **Vegetation/Greening on Airflow Field 植被对风场的影响**
+#### b. **Vegetation/Greening on Airflow Field 植被对风场的影响**
 
 |Relevant UDFs 相关UDF|
 |---|
@@ -123,9 +119,7 @@ It considers the impacts of vegetation and greening on airflow field, including 
 
 植被对流场的影响，包括速度源项、湍动能源项、湍流耗散率源项。
 
---------
-
-- **Urban Ventilation Evaluation Indices 通风评价指标**
+#### c. **Urban Ventilation Evaluation Indices 通风评价指标**
 
 |Relevant UDFs 相关UDF|
 |---|
@@ -142,11 +136,11 @@ It includes some commonly used indices for evaluating the urban ventilation perf
 
 ### 4.2 Urban Pollutant and Atmospheric Environment 城市污染与大气环境
 
-It includes some pollutant-related files, including reactive and passive pollutants. They might also be introduced in some other repos of mine. 
+It includes some pollutant-related files, including reactive and passive pollutants. They might also be introduced in some other repos of mine. For example: 
 
 一些大气污染物相关的UDF或相关计算。在笔者其他repo中有涉及到一些（原用于室内环境，亦可推广至城市环境），例如：
 
-- [**Ozone deposition and chemical reaction 臭氧反应与沉降**](https://github.com/jialeishen/UDF-of-Indoor-Ozone-Deposition)
+#### a. [**Ozone deposition and chemical reaction 臭氧反应与沉降**](https://github.com/jialeishen/UDF-of-Indoor-Ozone-Deposition)
 
 |Relevant UDFs 相关UDF|
 |---|
@@ -157,7 +151,7 @@ It includes the ozone deposition on different surfaces, and the generation of by
 
 臭氧在材料表面的沉降及化学反应生成副产物（by-products）的过程，包含臭氧与化合物的源项/汇项。
 
-- [**VOC reaction and removal VOCs反应与沉降**](https://github.com/jialeishen/UDF-Formaldehyde-Adsorption)*(Formaldehyde as the example 以甲醛为例)*
+#### b. [**VOC reaction and removal VOCs反应与沉降**](https://github.com/jialeishen/UDF-Formaldehyde-Adsorption)*(Formaldehyde as the example 以甲醛为例)*
 
 |Relevant UDFs 相关UDF|
 |---|
@@ -167,7 +161,7 @@ The process of formaldehyde reactions with other VOCs, and the generation of sec
 
 甲醛与其他化合物反应生成其他副产物的过程，包含甲醛与化合物的源项/汇项。
 
-- [**Particle natural deposition 颗粒物沉降**](https://github.com/jialeishen/ParticleDeposition)*(theoretical modeling, not a UDF 理论计算，非UDF)*
+#### c. [**Particle natural deposition 颗粒物沉降**](https://github.com/jialeishen/ParticleDeposition)*(theoretical modeling, not a UDF 理论计算，非UDF)*
 
 |Relevant modeling 相关计算|
 |---|
