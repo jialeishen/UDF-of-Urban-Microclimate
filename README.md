@@ -103,7 +103,9 @@ Urban Wind Environment is essential for the general environment in the city. It 
 |---|
 |[**udf_of_inlet.c**](https://github.com/jialeishen/UDF-of-Urban-Microclimate/blob/master/udf_of_inlet.c)|
 
-It sets up the inlet flow profiles, including inlet velocity and turbulence. The velocity profile in the file uses an exponential distribution as the example, which can be revised accordingly. 入流边界条件，包括速度项、湍动能项、湍流耗散率项。这里速度项以指数分布为例，可以根据具体要求进行修改。
+It sets up the inlet flow profiles, including inlet velocity and turbulence. The velocity profile in the file uses an exponential distribution as the example, which can be revised accordingly. 
+
+入流边界条件，包括速度项、湍动能项、湍流耗散率项。这里速度项以指数分布为例，可以根据具体要求进行修改。
 
 ![inletflow](https://github.com/kidisgod/UDF-of-Urban-Microclimate/blob/master/inletflow.png)
 
@@ -113,7 +115,9 @@ It sets up the inlet flow profiles, including inlet velocity and turbulence. The
 |---|
 |[**udf_of_tree.c**](https://github.com/jialeishen/UDF-of-Urban-Microclimate/blob/master/udf_of_tree.c)|
 
-It considers the impacts of vegetation and greening on airflow field, including some source terms of velocity and turbulence. 植被对流场的影响，包括速度源项、湍动能源项、湍流耗散率源项。
+It considers the impacts of vegetation and greening on airflow field, including some source terms of velocity and turbulence. 
+
+植被对流场的影响，包括速度源项、湍动能源项、湍流耗散率源项。
 
 - **Urban Ventilation Evaluation Indices 通风评价指标**
 
@@ -122,9 +126,13 @@ It considers the impacts of vegetation and greening on airflow field, including 
 |[**udf_of_source_particular_area.c**](https://github.com/jialeishen/UDF-of-Urban-Microclimate/blob/master/udf_of_source_particular_area.c)|
 |[**udf_of_urban_ventilation_indices.c**](https://github.com/jialeishen/UDF-of-Urban-Microclimate/blob/master/udf_of_urban_ventilation_indices.c)|
 
-It sets up a pollutant source term in a specific location. 污染物源项，在特定区域内设定污染物源项。
+It sets up a pollutant source term in a specific location. 
 
-It includes some commonly used indices for evaluating the urban ventilation performance, e.g. Purging flow rate, Local mean age of air, Mean residence time, Visitation frequency, Average residence time, Flow rate, Turn-over time, Air change rate, Air exchange efficiency. For more information, I'd like to recommend a great review paper introduced these indices - [Indices employed for the assessment of “urban outdoor ventilation” - A review](http://dx.doi.org/10.1016/j.atmosenv.2019.117211). 城市通风评价指标，包括Purging flow rate，Local mean age of air，Mean residence time，Visitation frequency，Average residence time，Flow rate，Turn-over time，Air change rate，Air exchange efficiency。一篇优秀的介绍各类通风指标的文献综述：[Indices employed for the assessment of “urban outdoor ventilation” - A review](http://dx.doi.org/10.1016/j.atmosenv.2019.117211)。
+污染物源项，在特定区域内设定污染物源项。
+
+It includes some commonly used indices for evaluating the urban ventilation performance, e.g. Purging flow rate, Local mean age of air, Mean residence time, Visitation frequency, Average residence time, Flow rate, Turn-over time, Air change rate, Air exchange efficiency. For more information, I'd like to recommend a great review paper introduced these indices - [Indices employed for the assessment of “urban outdoor ventilation” - A review](http://dx.doi.org/10.1016/j.atmosenv.2019.117211). 
+
+城市通风评价指标，包括Purging flow rate，Local mean age of air，Mean residence time，Visitation frequency，Average residence time，Flow rate，Turn-over time，Air change rate，Air exchange efficiency。一篇优秀的介绍各类通风指标的文献综述：[Indices employed for the assessment of “urban outdoor ventilation” - A review](http://dx.doi.org/10.1016/j.atmosenv.2019.117211)。
 
 ### 4.2 Urban Pollutant and Atmospheric Environment 城市污染与大气环境
 
@@ -139,7 +147,9 @@ It includes some pollutant-related files, including reactive and passive polluta
 |[**udf_ozone_deposition.c**](https://github.com/jialeishen/UDF-of-Indoor-Ozone-Deposition/blob/master/udf_ozone_deposition.c)|
 |[**udf_ozone_deposition_and_chemical_reaction.c**](https://github.com/jialeishen/UDF-of-Indoor-Ozone-Deposition/blob/master/udf_ozone_deposition_and_chemical_reaction.c)|
 
-It includes the ozone deposition on different surfaces, and the generation of by-products, including some ozone-related source/sink terms. 臭氧在材料表面的沉降及化学反应生成副产物（by-products）的过程，包含臭氧与化合物的源项/汇项。
+It includes the ozone deposition on different surfaces, and the generation of by-products, including some ozone-related source/sink terms. 
+
+臭氧在材料表面的沉降及化学反应生成副产物（by-products）的过程，包含臭氧与化合物的源项/汇项。
 
 - [**VOC reaction and removal VOCs反应与沉降**](https://github.com/jialeishen/UDF-Formaldehyde-Adsorption)*(Formaldehyde as the example 以甲醛为例)*
 
@@ -147,7 +157,9 @@ It includes the ozone deposition on different surfaces, and the generation of by
 |---|
 |[**UDF_Formaldehyde_Adsorption.c**](https://github.com/jialeishen/UDF-Formaldehyde-Adsorption/blob/master/UDF_Formaldehyde_Adsorption.c)|
 
-The process of formaldehyde reactions with other VOCs, and the generation of secondary emissions. It includes some source/sink terms of VOCs. 甲醛与其他化合物反应生成其他副产物的过程，包含甲醛与化合物的源项/汇项。
+The process of formaldehyde reactions with other VOCs, and the generation of secondary emissions. It includes some source/sink terms of VOCs. 
+
+甲醛与其他化合物反应生成其他副产物的过程，包含甲醛与化合物的源项/汇项。
 
 - [**Particle natural deposition 颗粒物沉降**](https://github.com/jialeishen/ParticleDeposition)*(theoretical modeling, not a UDF 理论计算，非UDF)*
 
@@ -156,7 +168,9 @@ The process of formaldehyde reactions with other VOCs, and the generation of sec
 |[**particledeposition.m**](https://github.com/jialeishen/ParticleDeposition/blob/master/particledeposition.m)|
 |[**vd_empirical.m**](https://github.com/jialeishen/ParticleDeposition/blob/master/vd_empirical.m)|
 
-It models the particle natural deposition on different surfaces using Matlab (not a UDF file). But the theoretical model can be adapted in UDFs. 颗粒物在表面的沉降的理论计算（非UDF），但该理论公式可被用于UDF中来计算颗粒物的沉降。
+It models the particle natural deposition on different surfaces using Matlab (not a UDF file). But the theoretical model can be adapted in UDFs. 
+
+颗粒物在表面的沉降的理论计算（非UDF），但该理论公式可被用于UDF中来计算颗粒物的沉降。
 
 ## 5. Tutorials of Application of UDFs in Fluent 相关UDF解释与教程
 
