@@ -2,14 +2,18 @@
 # Urban Microclimate 城市微气候
 
 ## Table of Content 目录
-[TOC]
+[1. Introduction 绪论](## 1. Introduction 绪论)
+[2. Introduction of UDF UDF简介](## 2. Introduction of UDF UDF简介)
+[3. Introduction of Urban Microclimate 城市微气候简介](## 3. Introduction of Urban Microclimate 城市微气候简介)
 
 ## 1. Introduction 绪论
 When using ANSYS Fluent® for urban microclimate simulation, it commonly requires users to apply some user defined functions (UDFs) to simulate the realistic urban environment and further solve specific urban microclimate problems, such as pollutant transmission, in ANSYS Fluent. This repo contains some commonly used UDF files of ANSYS Fluent for urban microclimate simulations. It includes the UDF files of wind velocity profile (inlet profile), pollutant emission source, tree and greening, and some commonly used performance indices for evaluating the urban ventilation. Some relevant publications are presented at the end of this document.
+
 在使用商用CFD软件ANSYS Fluent®研究城市微气候（Urban Microclimate）时，常常需要根据城市微气候的各特点编写用户自定义函数（UDF, i.e. User Defined Function）来模拟真实的城市环境，本文档包含了其中一些常用的UDF。本文首先对UDF及城市微气候的基本概念各自进行了简单的介绍；并结合城市微气候中的概念对本文档中的UDF进行了简单介绍，目前本文档中的UDF主要针对城市风环境；最后推荐了一些城市微气候相关的书籍及论文文献。希望本文档中所讨论的内容能对各位同行今后的科研有所帮助。
 
 ## 2. Introduction of UDF UDF简介
 There have been a bunch of documents talking about UDFs online. This document only focuses on UDFs related to urban microclimate. The background knowledge regarding UDF syntax and C programming is not discussed in this document. You can find numerous information online (for example [the ANSYS Fluent Help file for UDFs](https://www.afs.enea.it/project/neptunius/docs/fluent/html/udf/node4.htm#:~:text=A%20user%2Ddefined%20function%2C%20or,standard%20features%20of%20the%20code.)). UDFs are written in C. Therefore, users need to have some background in C programming or at least programming, no matter what language it is. The C codes of UDFs need to satisfy both C syntax and UDF "rules" (using predefined functions and macros in Fluent, check the Help file for more). UDFs in Fluent can be used to define specific properties for different variables, including boundary profiles (e.g. with varying velocity, temperature, concentration , etc.), material properties, chemical reaction constant, species source/sink term, and user defined scalars (UDSs), etc. 
+
 本文档重点讨论的是有关城市微气候的内容，涉及UDF语法、C语言编程等内容不在本文的重点讨论范围内，相关资料可以在网上搜索到很多，这里只对UDF进行简单的介绍，以下内容引用自[流沙CAE的博客](http://blog.sina.com.cn/s/blog_599d8faa0102v3j7.html)：
 >1、什么是UDF
 >
@@ -70,7 +74,8 @@ There have been a bunch of documents talking about UDFs online. This document on
 通过上文的介绍，大家应该对UDF已经有了一个大概的印象，知道了UDF是什么、有什么用等等，这有助于大家进一步理解并学习UDF，更多的有关UDF具体编写及语法等内容，大家可以查阅Fluent的[Help文档](https://www.afs.enea.it/project/neptunius/docs/fluent/html/udf/node4.htm#:~:text=A%20user%2Ddefined%20function%2C%20or,standard%20features%20of%20the%20code.)。
 
 ## 3. Introduction of Urban Microclimate 城市微气候简介
-Microclimate presents the local climate under a specific circumstance, which may have some different features from the surrounding environments. In a city scale, the local atmospheric environment usually exhibits quite different conditions at various locations, depending on local terrain, vegetation and greening, river and water, urban surface material, urban layout, building geometry and etc. It is usually called urban microclimate or urban microenvironment. Urban microclimate
+Microclimate presents the local climate under a specific circumstance, which may have some different features from the surrounding environments. In a city scale, the local atmospheric environment usually exhibits quite different conditions at various locations, depending on local terrain, vegetation and greening, river and water, urban surface material, urban layout, building geometry and etc. It is usually called urban microclimate or urban microenvironment. Urban microclimate is associated with people's health, wellness, and comfort in the outdoor space, and will affect indoor environments as well. Urban microclimate usually includes multiple research areas, such as urban heat island (UHI), urban pollutant transmission, urban ventilation, and urban/building greening. It involves subjects like architecture, atmospheric environment, environmental science, urban design and urban planning. 
+
 微气候是指在特定环境下不同于周围环境的当地小气候。而在城市尺度内，大气环境由于受到地形、植被绿化、水体、城市下垫面特征、城市布局形式、建筑物特征等因素的影响，常常表现出不同于周围大气环境的气候特点，这种现象也常被称为城市微气候。城市微气候常与城市环境中行人的健康、舒适性等直接相关，并间接影响室内环境。常见的如城市热岛现象（UHI, i.e. Urban Heat Island）、城市大气污染、建筑屋顶绿化、通风廊道等概念都属于城市微气候的研究范畴，涉及建筑、大气、环境、城市设计、城市规划等相关学科与领域。
 
 城市微气候主要包括：**城市热环境、城市湿环境、城市风环境、城市污染与大气环境、城市光环境、城市声环境**等。由于笔者的研究方向及个人水平的限制，目前本文档所涉及到的城市微气候内容只局限在对**城市风环境**与**城市污染与大气环境**的讨论。对于**城市热环境**、**城市湿环境**等其他方向，笔者目前及在可预见的未来都无法对其进行更多的研究并编写相关的UDF，希望能有同行对此进行研究并扩展相应的UDF，使之能应用到更为广泛的研究中。因此，本repo将仅针对于**城市风环境**与**城市污染与大气环境**进行讨论。
@@ -79,7 +84,7 @@ Microclimate presents the local climate under a specific circumstance, which may
 ![urbanphysics](https://github.com/kidisgod/UDF-of-Urban-Microclimate/blob/master/urbanphysics.png)
 
 ## 4. UDFs in Urban Microclimate 城市微气候相关UDF
-### 4.1 城市风环境
+### 4.1 Urban Wind Environment 城市风环境
 城市风环境对于整个城市环境有巨大影响，涉及城市空气污染、自然通风、对流热交换、风荷载及城市风害等内容，同时城市风环境作为室内环境的边界条件也对室内环境有着重要影响。不同的城市密度、城市建筑高度变化、城市及街道形态等的变化都会影响一定尺度下的城市风环境。除了这一系列的城市、街道、建筑的形态会对城市风环境产生重要影响之外，城市区域的入口边界条件（inlet flow）、植被等也会影响城市内部的风环境。
 
 - **入口边界条件**
@@ -111,7 +116,7 @@ Microclimate presents the local climate under a specific circumstance, which may
 
 城市通风评价指标，包括Purging flow rate，Local mean age of air，Mean residence time，Visitation frequency，Average residence time，Flow rate，Turn-over time，Air change rate，Air exchange efficiency。一篇优秀的介绍各类通风指标的文献综述：[Indices employed for the assessment of “urban outdoor ventilation” - A review](http://dx.doi.org/10.1016/j.atmosenv.2019.117211)。
 
-### 4.2 城市污染与大气环境
+### 4.2 Urban Pollutant and Atmospheric Environment 城市污染与大气环境
 一些大气污染物相关的UDF或相关计算在笔者其他repo中有涉及到一些（原用于室内环境，亦可推广至城市环境），例如：
 
 - [**臭氧反应与沉降**](https://github.com/jialeishen/UDF-of-Indoor-Ozone-Deposition)
@@ -140,30 +145,39 @@ Microclimate presents the local climate under a specific circumstance, which may
 
 颗粒物在表面的沉降的理论计算（非UDF），但该理论公式可被用于UDF中来计算颗粒物的沉降。
 
-## 5. 相关UDF解释与教程
-UDF相关的代码与各类宏的介绍，可以参见ANSYS Fluent官方的UDF教程，你可以在你的Fluent的Help中找到相关文档。网络上亦有一些相关的教程，请自行搜索。本repo中涉及到的一些UDF代码均带有一些注释，可以配合注释来理解这些UDF代码。此外，也以部分UDF文件为例，写了比较详尽的解释文档，参见本repo的几个Tutorial文档，应该会对你的理解有所帮助。这些文档写于多年前，如有任何错误请大家指出。
+## 5. Tutorials of Application of UDFs in Fluent 相关UDF解释与教程
 
-## 6. 更多阅读
+Now you have a brief overview on different UDFs of urban microclimate. But how can you really use them in Fluent and what does each command/code of the UDF file mean? You can always find the Help file in Fluent and it can likely solve almost 100% of all questions you have. I have also drafted a few tutorials documents about that, which are listed below. Feel free to find and read them if you needed. It might provide you some helps on understanding UDF files and the applications of them. All these documents were written in Chinese. For English-speaking readers, you can actually find many similar tutorials or documents on Google or Youtube. Please do so if you need. 
+
+UDF相关的代码与各类宏的介绍，可以参见ANSYS Fluent官方的UDF教程，你可以在你的Fluent的Help中找到相关文档。网络上亦有一些相关的教程，请自行搜索。本repo中涉及到的一些UDF代码均带有一些注释，可以配合注释来理解这些UDF代码。此外，也以部分UDF文件为例，写了比较详尽的解释文档，如下所示。这应该会对你的理解有所帮助。这些文档写于多年前，如有任何错误请大家指出。
+
+
+
+## 6. More Information 更多阅读
+
+This document only exhibits very limited information in urban microclimate. If you're interested in reading more relevant contents, there are a few books and papers I highly recommended, particularly for the beginners. 
 
 限于篇幅，本文档对于城市微气候的介绍十分有限，如果有兴趣继续了解更多城市微气候相关的内容，以下是一些笔者个人推荐的书籍与综述性论文，供各位参考学习：
   
-### 6.1 参考书：
+### 6.1 Books 参考书：
 
- (1) [城市环境物理](https://www.amazon.cn/%E5%9F%8E%E5%B8%82%E7%8E%AF%E5%A2%83%E7%89%A9%E7%90%86-%E5%88%98%E5%8A%A0%E5%B9%B3/dp/B004X8RC6A/ref=sr_1_1?ie=UTF8&qid=1478336099&sr=8-1&keywords=%E5%9F%8E%E5%B8%82%E7%8E%AF%E5%A2%83%E7%89%A9%E7%90%86)
+Some books I read during my first studies in this area. Most of them are in Chinese language.
 
-强烈推荐，本文档有大量内容直接摘自《城市环境物理》的各个章节或受其启发。
+ (1) [Urban Environment Physics 城市环境物理](https://www.amazon.cn/%E5%9F%8E%E5%B8%82%E7%8E%AF%E5%A2%83%E7%89%A9%E7%90%86-%E5%88%98%E5%8A%A0%E5%B9%B3/dp/B004X8RC6A/ref=sr_1_1?ie=UTF8&qid=1478336099&sr=8-1&keywords=%E5%9F%8E%E5%B8%82%E7%8E%AF%E5%A2%83%E7%89%A9%E7%90%86)(A Chinese book)
 
- (2) [CFD与建筑环境设计](https://www.amazon.cn/CFD%E4%B8%8E%E5%BB%BA%E7%AD%91%E7%8E%AF%E5%A2%83%E8%AE%BE%E8%AE%A1-%E6%9D%91%E4%B8%8A%E5%91%A8%E4%B8%89/dp/B0012782NW/ref=sr_1_1?ie=UTF8&qid=1478336169&sr=8-1&keywords=CFD%E4%B8%8E%E5%BB%BA%E7%AD%91%E7%8E%AF%E5%A2%83%E8%AE%BE%E8%AE%A1)
+Highly recommanded for Chinese-speaking readers. Much of the content in this document was inspired by this book. 强烈推荐，本文档有大量内容直接摘自《城市环境物理》的各个章节或受其启发。
 
-此书的大部分内容介绍的是室内环境，大家可以只看其室外环境部分
+ (2) [CFD与建筑环境设计](https://www.amazon.cn/CFD%E4%B8%8E%E5%BB%BA%E7%AD%91%E7%8E%AF%E5%A2%83%E8%AE%BE%E8%AE%A1-%E6%9D%91%E4%B8%8A%E5%91%A8%E4%B8%89/dp/B0012782NW/ref=sr_1_1?ie=UTF8&qid=1478336169&sr=8-1&keywords=CFD%E4%B8%8E%E5%BB%BA%E7%AD%91%E7%8E%AF%E5%A2%83%E8%AE%BE%E8%AE%A1)(A Japanese book, but was translated into Chinese. No English version available probably)
 
- (3) [Urban Microclimate: Designing the Spaces Between Buildings](https://www.amazon.cn/Urban-Microclimate-Designing-the-Spaces-Between-Buildings-Erell-Evyatar/dp/B008FYSNL6/ref=sr_1_1?ie=UTF8&qid=1478336175&sr=8-1&keywords=Urban+Microclimate%3A+Designing+the+Spaces+Between+Buildings)
+This book includes CFD simulations for both indoor and outdoor environments. You can just focus on the outdoor part if you are only interested in that. 此书的大部分内容介绍的是室内环境，大家可以只看其室外环境部分
 
-本书有[中文翻译版](https://www.amazon.cn/%E5%9F%8E%E5%B8%82%E5%B0%8F%E6%B0%94%E5%80%99-%E5%BB%BA%E7%AD%91%E4%B9%8B%E9%97%B4%E7%9A%84%E7%A9%BA%E9%97%B4%E8%AE%BE%E8%AE%A1-%E5%9F%83%E7%BB%B4%E7%89%B9%C2%B7%E5%9F%83%E9%9B%B7%E5%B0%94/dp/B00JL2FMZQ/ref=sr_1_3?ie=UTF8&qid=1478336175&sr=8-3&keywords=Urban+Microclimate%3A+Designing+the+Spaces+Between+Buildings)，但是翻译质量略差，建议大家配合英文原版阅读。
+ (3) [Urban Microclimate: Designing the Spaces Between Buildings](https://www.amazon.cn/Urban-Microclimate-Designing-the-Spaces-Between-Buildings-Erell-Evyatar/dp/B008FYSNL6/ref=sr_1_1?ie=UTF8&qid=1478336175&sr=8-1&keywords=Urban+Microclimate%3A+Designing+the+Spaces+Between+Buildings)(An English book, but was translated into Chinese)
 
-### 6.2 综述性论文：
+This is a very good book for English-speaking readers, particularly the beginners in this field. 本书有[中文翻译版](https://www.amazon.cn/%E5%9F%8E%E5%B8%82%E5%B0%8F%E6%B0%94%E5%80%99-%E5%BB%BA%E7%AD%91%E4%B9%8B%E9%97%B4%E7%9A%84%E7%A9%BA%E9%97%B4%E8%AE%BE%E8%AE%A1-%E5%9F%83%E7%BB%B4%E7%89%B9%C2%B7%E5%9F%83%E9%9B%B7%E5%B0%94/dp/B00JL2FMZQ/ref=sr_1_3?ie=UTF8&qid=1478336175&sr=8-3&keywords=Urban+Microclimate%3A+Designing+the+Spaces+Between+Buildings)，但是翻译质量略差，建议大家配合英文原版阅读。
 
- (1) [城市形态与城市微气候的关联性研究](http://www.cnki.net/KCMS/detail/detail.aspx?QueryID=3&CurRec=1&recid=&filename=JZXB201207005&dbname=CJFD2012&dbcode=CJFQ&pr=&urlid=&yx=&uid=WEEvREcwSlJHSldRa1FhcEE0L01SOC9Bb2NIa3FuWWNUc3RjVndKTjBhaz0=$9A4hF_YAuvQ5obgVAqNKPCYcEjKensW4ggI8Fm4gTkoUKaID8j8gFw!!&v=MzE3NDc0SDlQTXFJOUZZWVI4ZVgxTHV4WVM3RGgxVDNxVHJXTTFGckNVUkx5ZVp1WnFGeTdrVWJ2TUx6ZlRiTEc=)
+### 6.2 Review Papers 综述性论文：
+
+ (1) [Study on Interrelationship between Urban Pattern and Urban Microclimate 城市形态与城市微气候的关联性研究](http://www.cnki.net/KCMS/detail/detail.aspx?QueryID=3&CurRec=1&recid=&filename=JZXB201207005&dbname=CJFD2012&dbcode=CJFQ&pr=&urlid=&yx=&uid=WEEvREcwSlJHSldRa1FhcEE0L01SOC9Bb2NIa3FuWWNUc3RjVndKTjBhaz0=$9A4hF_YAuvQ5obgVAqNKPCYcEjKensW4ggI8Fm4gTkoUKaID8j8gFw!!&v=MzE3NDc0SDlQTXFJOUZZWVI4ZVgxTHV4WVM3RGgxVDNxVHJXTTFGckNVUkx5ZVp1WnFGeTdrVWJ2TUx6ZlRiTEc=) (a classical review paper in Chinese language written by my former colleagues)
 
  (2) [AIJ guidelines for practical applications of CFD to pedestrian wind environment around buildings](http://www.sciencedirect.com/science/article/pii/S0167610508000445)
 
@@ -173,11 +187,15 @@ UDF相关的代码与各类宏的介绍，可以参见ANSYS Fluent官方的UDF�
 
  (5) [Application of computational fluid dynamics in building performance simulation for the outdoor environment: an overview](http://china.tandfonline.com/doi/abs/10.1080/19401493.2010.513740)
 
- *注：这里只推荐了几篇综述性论文，还有大量相关研究论文，请各位自行[查阅](http://www.sciencedirect.com/)*
+ * Only a few review papers are listed above. You can find more research articles [online](https://scholar.google.com/).*
+
+ *注：这里只推荐了几篇综述性论文，还有大量相关研究论文，请各位自行[查阅](https://scholar.google.com/)*
  
- ### 6.3 笔者相关论文：
+ ### 6.3 My Research Papers 笔者相关论文：
  
-最后是一些笔者author或co-author的城市微气候相关的论文，涉及**城市风环境**，**街道通风与污染物扩散**，**植被与绿化对城市热环境与污染物扩散的影响**，**交通环境的人体污染物暴露**等。欢迎各位同行阅读与引用，谢谢！若您无法获取这些论文，也可在笔者主页上（www.jialeishen.com ）找到全文下载。
+I have also published a few papers in the urban microclimate area, which includes studies in **urban wind environment**, **urban ventilation and pollutant dispersion**, **impacts of urban greening on urban thermal environment and pollutant dispersion**, **human exposure to air pollutants in transportation environments**, etc. Some of those papers are listed below. Thanks in advance for your reading and citation if you are interested in them. You can find and download all full papers for free on my [personal website](http://www.jialeishen.com/publications/) in case you are not able to access some of them.
+ 
+最后是一些笔者参与发表的城市微气候相关的论文，涉及**城市风环境**，**街道通风与污染物扩散**，**植被与绿化对城市热环境与污染物扩散的影响**，**交通环境的人体污染物暴露**等。欢迎各位同行阅读与引用，谢谢！若您无法获取这些论文，也可在[笔者主页上](http://www.jialeishen.com/publications/)找到全文并下载。
 
  (1) [An investigation on the effect of street morphology to ambient air quality using six real-world cases](https://doi.org/10.1016/j.atmosenv.2017.05.047)
 
@@ -197,6 +215,8 @@ UDF相关的代码与各类宏的介绍，可以参见ANSYS Fluent官方的UDF�
  
  (9) [Improving wind environment design based on assessing spatial distribution of ventilation efficiency in regional space](https://doi.org/10.1016/j.egypro.2017.12.418)
  
+Feel free to let me know if you have any questions or comments on this document or my researches. Corrections or suggestions on the contents in this document are always welcome. I'm open to have any discussions with you. You can always find me through my personal website: www.jialeishen.com
+
 本文档介绍了几个常用的城市微气候的UDF，同时简单介绍了城市微气候相关内容，希望这些UDF和介绍内容可以对各位同行日后的科研有所帮助或启发，同时**强烈邀请**大家对本文档内容进行修改及补充！！也欢迎同行分享更多城市微气候相关的UDF，欢迎共同交流。作者：www.jialeishen.com 
 
-更新：2021/09/25
+Updated 更新：2022/04/30
