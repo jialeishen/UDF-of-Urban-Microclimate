@@ -6,6 +6,8 @@
 2. [Introduction of UDF UDF简介](#2-introduction-of-udf-udf简介)
 3. [Introduction of Urban Microclimate 城市微气候简介](#3-introduction-of-urban-microclimate-城市微气候简介)
 4. [UDFs in Urban Microclimate 城市微气候相关UDF](#4-UDFs-in-Urban-Microclimate-城市微气候相关UDF)
+5. [Tutorials of Application of UDFs in Fluent 相关UDF解释与教程](#5-Tutorials-of-Application-of-UDFs-in-Fluent-相关UDF解释与教程)
+6. [More Information 更多阅读](#6-More-Information-更多阅读)
 
 ## 1. Introduction 绪论
 When using ANSYS Fluent® for urban microclimate simulation, it commonly requires users to apply some user defined functions (UDFs) to simulate the realistic urban environment and further solve specific urban microclimate problems, such as pollutant transmission, in ANSYS Fluent. This repo contains some commonly used UDF files of ANSYS Fluent for urban microclimate simulations. It includes the UDF files of wind velocity profile (inlet profile), pollutant emission source, tree and greening, and some commonly used performance indices for evaluating the urban ventilation. Some relevant publications are presented at the end of this document.
@@ -79,72 +81,82 @@ Microclimate presents the local climate under a specific circumstance, which may
 
 微气候是指在特定环境下不同于周围环境的当地小气候。而在城市尺度内，大气环境由于受到地形、植被绿化、水体、城市下垫面特征、城市布局形式、建筑物特征等因素的影响，常常表现出不同于周围大气环境的气候特点，这种现象也常被称为城市微气候。城市微气候常与城市环境中行人的健康、舒适性等直接相关，并间接影响室内环境。常见的如城市热岛现象（UHI, i.e. Urban Heat Island）、城市大气污染、建筑屋顶绿化、通风廊道等概念都属于城市微气候的研究范畴，涉及建筑、大气、环境、城市设计、城市规划等相关学科与领域。
 
+Urban microclimate mainly include **Urban Thermal Environment, Urban Moist Environment, Urban Wind Environment (Urban Ventilation), Urban Pollutant and Atmospheric Environment, Urban Lighting Environment, and Urban Sound Environment**, etc. This document only focuses on **Urban Wind Environment (Urban Ventilation)** and **Urban Pollutant and Atmospheric Environment** as those were my major research areas. I'm actually unable to add more UDFs of other urban environment fields like thermal environment. If you are a researcher in urban microclimate field and you are willing to share your own UDFs of your research, please feel free to add more to this repo. Thanks. 
+
 城市微气候主要包括：**城市热环境、城市湿环境、城市风环境、城市污染与大气环境、城市光环境、城市声环境**等。由于笔者的研究方向及个人水平的限制，目前本文档所涉及到的城市微气候内容只局限在对**城市风环境**与**城市污染与大气环境**的讨论。对于**城市热环境**、**城市湿环境**等其他方向，笔者目前及在可预见的未来都无法对其进行更多的研究并编写相关的UDF，希望能有同行对此进行研究并扩展相应的UDF，使之能应用到更为广泛的研究中。因此，本repo将仅针对于**城市风环境**与**城市污染与大气环境**进行讨论。
+
+The following image is adapted from [a paper](http://www.sciencedirect.com/science/article/pii/S0360132315000724) of Prof. Bert Blocken (at TU/e). It describes the contents in urban physics and environments. 
 
 下图摘自荷兰埃因霍温理工大学（TU/e）Bert Blocken教授的[一篇文章](http://www.sciencedirect.com/science/article/pii/S0360132315000724)，描述了城市物理环境所涉及到的内容。
 ![urbanphysics](https://github.com/kidisgod/UDF-of-Urban-Microclimate/blob/master/urbanphysics.png)
 
 ## 4. UDFs in Urban Microclimate 城市微气候相关UDF
 ### 4.1 Urban Wind Environment 城市风环境
+
+Urban Wind Environment is essential for the general environment in the city. It may impact urban pollutant dispersion, urban ventilation, thermal bouyancy, and wind load on buildings. It also has great impacts on indoor environments such as indoor natural ventilation, building filtration, and indoor pollutant distribution as the ambient environment is the boundary of indoor spaces. Urban parameters like urban density, building height variation, and urban/street morphology will always affect the urban wind environment at a certain level. Besides, the inlet flow of the urban area, the vegetation/greening configurations of the city also impact the urban wind environment or urban ventilation.
+
 城市风环境对于整个城市环境有巨大影响，涉及城市空气污染、自然通风、对流热交换、风荷载及城市风害等内容，同时城市风环境作为室内环境的边界条件也对室内环境有着重要影响。不同的城市密度、城市建筑高度变化、城市及街道形态等的变化都会影响一定尺度下的城市风环境。除了这一系列的城市、街道、建筑的形态会对城市风环境产生重要影响之外，城市区域的入口边界条件（inlet flow）、植被等也会影响城市内部的风环境。
 
-- **入口边界条件**
+- **Inlet Profile 入口边界条件**
 
-|相关UDF|
+|Relevant UDFs 相关UDF|
 |---|
 |[**udf_of_inlet.c**](https://github.com/jialeishen/UDF-of-Urban-Microclimate/blob/master/udf_of_inlet.c)|
 
-入流边界条件，包括速度项、湍动能项、湍流耗散率项。这里速度项以指数分布为例，可以根据具体要求进行修改。
+It sets up the inlet flow profiles, including inlet velocity and turbulence. The velocity profile in the file uses an exponential distribution as the example, which can be revised accordingly. 入流边界条件，包括速度项、湍动能项、湍流耗散率项。这里速度项以指数分布为例，可以根据具体要求进行修改。
 
 ![inletflow](https://github.com/kidisgod/UDF-of-Urban-Microclimate/blob/master/inletflow.png)
 
-- **植被对风场的影响**
+- **Vegetation/Greening on Airflow Field 植被对风场的影响**
 
-|相关UDF|
+|Relevant UDFs 相关UDF|
 |---|
 |[**udf_of_tree.c**](https://github.com/jialeishen/UDF-of-Urban-Microclimate/blob/master/udf_of_tree.c)|
 
-植被对流场的影响，包括速度源项、湍动能源项、湍流耗散率源项。
+It considers the impacts of vegetation and greening on airflow field, including some source terms of velocity and turbulence. 植被对流场的影响，包括速度源项、湍动能源项、湍流耗散率源项。
 
-- **通风评价指标**
+- **Urban Ventilation Evaluation Indices 通风评价指标**
 
-|相关UDF|
+|Relevant UDFs 相关UDF|
 |---|
 |[**udf_of_source_particular_area.c**](https://github.com/jialeishen/UDF-of-Urban-Microclimate/blob/master/udf_of_source_particular_area.c)|
 |[**udf_of_urban_ventilation_indices.c**](https://github.com/jialeishen/UDF-of-Urban-Microclimate/blob/master/udf_of_urban_ventilation_indices.c)|
 
-污染物源项，在特定区域内设定污染物源项。
+It sets up a pollutant source term in a specific location. 污染物源项，在特定区域内设定污染物源项。
 
-城市通风评价指标，包括Purging flow rate，Local mean age of air，Mean residence time，Visitation frequency，Average residence time，Flow rate，Turn-over time，Air change rate，Air exchange efficiency。一篇优秀的介绍各类通风指标的文献综述：[Indices employed for the assessment of “urban outdoor ventilation” - A review](http://dx.doi.org/10.1016/j.atmosenv.2019.117211)。
+It includes some commonly used indices for evaluating the urban ventilation performance, e.g. Purging flow rate, Local mean age of air, Mean residence time, Visitation frequency, Average residence time, Flow rate, Turn-over time, Air change rate, Air exchange efficiency. For more information, I'd like to recommend a great review paper introduced these indices - [Indices employed for the assessment of “urban outdoor ventilation” - A review](http://dx.doi.org/10.1016/j.atmosenv.2019.117211). 城市通风评价指标，包括Purging flow rate，Local mean age of air，Mean residence time，Visitation frequency，Average residence time，Flow rate，Turn-over time，Air change rate，Air exchange efficiency。一篇优秀的介绍各类通风指标的文献综述：[Indices employed for the assessment of “urban outdoor ventilation” - A review](http://dx.doi.org/10.1016/j.atmosenv.2019.117211)。
 
 ### 4.2 Urban Pollutant and Atmospheric Environment 城市污染与大气环境
-一些大气污染物相关的UDF或相关计算在笔者其他repo中有涉及到一些（原用于室内环境，亦可推广至城市环境），例如：
 
-- [**臭氧反应与沉降**](https://github.com/jialeishen/UDF-of-Indoor-Ozone-Deposition)
+It includes some pollutant-related files, including reactive and passive pollutants. They might also be introduced in some other repos of mine. 
 
-|相关UDF|
+一些大气污染物相关的UDF或相关计算。在笔者其他repo中有涉及到一些（原用于室内环境，亦可推广至城市环境），例如：
+
+- [**Ozone deposition and chemical reaction 臭氧反应与沉降**](https://github.com/jialeishen/UDF-of-Indoor-Ozone-Deposition)
+
+|Relevant UDFs 相关UDF|
 |---|
 |[**udf_ozone_deposition.c**](https://github.com/jialeishen/UDF-of-Indoor-Ozone-Deposition/blob/master/udf_ozone_deposition.c)|
 |[**udf_ozone_deposition_and_chemical_reaction.c**](https://github.com/jialeishen/UDF-of-Indoor-Ozone-Deposition/blob/master/udf_ozone_deposition_and_chemical_reaction.c)|
 
-臭氧在材料表面的沉降及化学反应生成副产物（by-products）的过程，包含臭氧与化合物的源项/汇项。
+It includes the ozone deposition on different surfaces, and the generation of by-products, including some ozone-related source/sink terms. 臭氧在材料表面的沉降及化学反应生成副产物（by-products）的过程，包含臭氧与化合物的源项/汇项。
 
-- [**其他VOCs反应与沉降**](https://github.com/jialeishen/UDF-Formaldehyde-Adsorption)*(以甲醛为例)*
+- [**VOC reaction and removal VOCs反应与沉降**](https://github.com/jialeishen/UDF-Formaldehyde-Adsorption)*(Formaldehyde as the example 以甲醛为例)*
 
-|相关UDF|
+|Relevant UDFs 相关UDF|
 |---|
 |[**UDF_Formaldehyde_Adsorption.c**](https://github.com/jialeishen/UDF-Formaldehyde-Adsorption/blob/master/UDF_Formaldehyde_Adsorption.c)|
 
-甲醛与其他化合物反应生成其他副产物的过程，包含甲醛与化合物的源项/汇项。
+The process of formaldehyde reactions with other VOCs, and the generation of secondary emissions. It includes some source/sink terms of VOCs. 甲醛与其他化合物反应生成其他副产物的过程，包含甲醛与化合物的源项/汇项。
 
-- [**颗粒物沉降**](https://github.com/jialeishen/ParticleDeposition)*(理论计算，非UDF)*
+- [**Particle natural deposition 颗粒物沉降**](https://github.com/jialeishen/ParticleDeposition)*(theoretical modeling, not a UDF 理论计算，非UDF)*
 
-|相关计算|
+|Relevant modeling 相关计算|
 |---|
 |[**particledeposition.m**](https://github.com/jialeishen/ParticleDeposition/blob/master/particledeposition.m)|
 |[**vd_empirical.m**](https://github.com/jialeishen/ParticleDeposition/blob/master/vd_empirical.m)|
 
-颗粒物在表面的沉降的理论计算（非UDF），但该理论公式可被用于UDF中来计算颗粒物的沉降。
+It models the particle natural deposition on different surfaces using Matlab (not a UDF file). But the theoretical model can be adapted in UDFs. 颗粒物在表面的沉降的理论计算（非UDF），但该理论公式可被用于UDF中来计算颗粒物的沉降。
 
 ## 5. Tutorials of Application of UDFs in Fluent 相关UDF解释与教程
 
@@ -195,7 +207,7 @@ This is a very good book for English-speaking readers, particularly the beginner
 
  (5) [Application of computational fluid dynamics in building performance simulation for the outdoor environment: an overview](http://china.tandfonline.com/doi/abs/10.1080/19401493.2010.513740)
 
- * Only a few review papers are listed above. You can find more research articles [online](https://scholar.google.com/).*
+ *Only a few review papers are listed above. You can find more research articles [online](https://scholar.google.com/).*
 
  *注：这里只推荐了几篇综述性论文，还有大量相关研究论文，请各位自行[查阅](https://scholar.google.com/)*
  
