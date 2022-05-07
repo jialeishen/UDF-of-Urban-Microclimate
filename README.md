@@ -93,7 +93,7 @@ The following image is adapted from [a paper](http://www.sciencedirect.com/scien
 ## 4. UDFs in Urban Microclimate 城市微气候相关UDF
 ### 4.1 Urban Wind Environment 城市风环境
 
-Urban Wind Environment is essential for the general environment in the city. It may impact urban pollutant dispersion, urban ventilation, thermal bouyancy, and wind load on buildings. It also has great impacts on indoor environments such as indoor natural ventilation, building filtration, and indoor pollutant distribution as the ambient environment is the boundary of indoor spaces. Urban parameters like urban density, building height variation, and urban/street morphology will always affect the urban wind environment at a certain level. Besides, the inlet flow of the urban area, the vegetation/greening configurations of the city also impact the urban wind environment or urban ventilation.
+Urban Wind Environment is essential for the general environment in the city. It may impact urban pollutant dispersion, urban ventilation, thermal bouyancy, and wind load on buildings. It also has great impacts on indoor environments such as indoor natural ventilation, building infiltration, and indoor pollutant distribution as the ambient environment is the boundary of indoor spaces. Urban parameters like urban density, building height variation, and urban/street morphology will always affect the urban wind environment at a certain level. Besides, the inlet flow of the urban area, the vegetation/greening configurations of the city also impact the urban wind environment or urban ventilation.
 
 城市风环境对于整个城市环境有巨大影响，涉及城市空气污染、自然通风、对流热交换、风荷载及城市风害等内容，同时城市风环境作为室内环境的边界条件也对室内环境有着重要影响。不同的城市密度、城市建筑高度变化、城市及街道形态等的变化都会影响一定尺度下的城市风环境。除了这一系列的城市、街道、建筑的形态会对城市风环境产生重要影响之外，城市区域的入口边界条件（inlet flow）、植被等也会影响城市内部的风环境。
 
