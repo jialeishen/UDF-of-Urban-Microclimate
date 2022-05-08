@@ -157,9 +157,9 @@ It includes the ozone deposition on different surfaces, and the generation of by
 |---|
 |[**UDF_Formaldehyde_Adsorption.c**](https://github.com/jialeishen/UDF-Formaldehyde-Adsorption/blob/master/UDF_Formaldehyde_Adsorption.c)|
 
-The process of formaldehyde reactions with other VOCs, and the generation of secondary emissions. It includes some source/sink terms of VOCs. 
+It simulates indoor formaldehyde distribution under the condition with several sorptive surfaces indoors (walls and ceiling). A sink term of formaldehyde is added to the species transport governing equation in Fluent.
 
-甲醛与其他化合物反应生成其他副产物的过程，包含甲醛与化合物的源项/汇项。
+甲醛被室内表面的吸收的解吸过程，包含甲醛的源项/汇项。
 
 #### c. [**Particle natural deposition 颗粒物沉降**](https://github.com/jialeishen/ParticleDeposition)*(theoretical modeling, not a UDF 理论计算，非UDF)*
 
