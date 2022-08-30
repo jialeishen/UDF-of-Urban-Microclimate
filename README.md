@@ -174,7 +174,7 @@ It models the particle natural deposition on different surfaces using Matlab (no
 
 ## 5. Tutorials of Application of UDFs in Fluent 相关UDF解释与教程
 
-Now you have a brief overview on different UDFs of urban microclimate. But how can you really use them in Fluent and what does each command/code of the UDF file mean? You can always find the Help file in Fluent and it can likely solve almost 100% of all questions you have. I have also drafted a few tutorials documents about that, which are listed below. Feel free to find and read them if you needed. It might provide you some helps on understanding UDF files and the applications of them. All these documents were written in Chinese. For English-speaking readers, you can actually find many similar tutorials or documents on Google or Youtube. Please do so if you need. 
+Now you have a brief overview on different UDFs of urban microclimate. But how can you really use them in Fluent and what does each command/code of the UDF file mean? You can always find the Help file in Fluent and it can likely solve almost 100% of all questions you have. I have also drafted a few tutorials documents about that, which are listed below. Please search them as needed. It might provide you some helps on understanding UDF files and the applications of them. All these documents were written in Chinese. For English-speaking readers, you can actually find many similar tutorials or documents on Google or Youtube. Please do so if you need. 
 
 UDF相关的代码与各类宏的介绍，可以参见ANSYS Fluent官方的UDF教程，你可以在你的Fluent的Help中找到相关文档。网络上亦有一些相关的教程，请自行搜索。本repo中涉及到的一些UDF代码均带有一些注释，可以配合注释来理解这些UDF代码。此外，也以部分UDF文件为例，写了比较详尽的解释文档，如下所示。这应该会对你的理解有所帮助。这些文档写于多年前，如有任何错误请大家指出。
 
