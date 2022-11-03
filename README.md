@@ -3,6 +3,7 @@
 
 [![Visits Badge](https://badges.strrl.dev/visits/jialeishen/UDF-of-Urban-Microclimate)](https://badges.strrl.dev)
 [![Forks](https://img.shields.io/github/forks/jialeishen/UDF-of-Urban-Microclimate)](https://github.com/jialeishen/UDF-of-Urban-Microclimate)
+[![Stars](https://img.shields.io/github/stars/jialeishen/UDF-of-Urban-Microclimate?color=orange)](https://github.com/jialeishen/UDF-of-Urban-Microclimate)
 
 ## 0. Table of Content 目录
 1. [Introduction 绪论](#1-introduction-绪论)
