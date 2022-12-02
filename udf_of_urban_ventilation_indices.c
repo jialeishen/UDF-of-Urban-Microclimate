@@ -656,7 +656,7 @@ DEFINE_ON_DEMAND(Ea_1_udf)
 
 /*******************************NEV term*******************************/
 
-DEFINE_ON_DEMOND(NEV_udf)
+DEFINE_ON_DEMAND(NEV_udf)
 {
 	FILE *fp_NEV;
 	fp_NEV=fopen("NEV.txt","a");
@@ -779,7 +779,7 @@ DEFINE_ON_DEMAND(yCanopy_udf)
 
 /*******************************U_E term*******************************/
 
-DEFINE_ON_DEMOND(U_E_udf)
+DEFINE_ON_DEMAND(U_E_udf)
 {
 	FILE *fp_U_E;
 	fp_U_E=fopen("U_E.txt","a");
